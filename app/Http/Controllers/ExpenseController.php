@@ -111,20 +111,20 @@ class ExpenseController extends Controller
     // Filter expenses
     public function filter(Request $request)
     {
-        $expenses =Expense::select('title','amount','pm.method','cat.category')
-                ->join('payment_method as pm','pm.id','=','expense.pm_id')
-                ->join('category as cat','cat.id','=','expense.cat_id')
-                ->where('com_id','=',$request->company_id)
-                ->get();
+        // $expenses =Expense::select('title','amount','pm.method','cat.category')
+        //         ->join('payment_method as pm','pm.id','=','expense.pm_id')
+        //         ->join('category as cat','cat.id','=','expense.cat_id')
+        //         ->where('com_id','=',$request->company_id)
+        //         ->get();
 
-        if(isset($request->All_Methods) && isset($request->Office)){
-            for ($i=0; $i < sizeof($expenses); $i++) {
-                if($expenses[$i]->category=='Office')
-                $expenses_filter=array_push($expenses[$i]);
-            }
-        }else $expenses_filter=$expenses;
-        dd($request);
-        dd($expenses_filter);
+        // if(isset($request->All_Methods) && isset($request->Office)){
+        //     for ($i=0; $i < sizeof($expenses); $i++) {
+        //         if($expenses[$i]->category=='Office')
+        //         $expenses_filter=array_push($expenses[$i]);
+        //     }
+        // }else $expenses_filter=$expenses;
+        // dd($request);
+        // dd($expenses_filter);
     }
 
 }

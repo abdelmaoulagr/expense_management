@@ -36,6 +36,7 @@ Route::get('/companies/{company}/status', [company::class, 'status'])->name('com
 Route::post('/addexp', [exp::class, 'addexp'])->name('addexp');
 Route::get('/{company}', [exp::class,'show_expenses'])->name('com.exp');
 Route::post('/filter', [exp::class, 'filter'])->name('filter.expense');
+Route::get('/{expense}/delete', [exp::class, 'delete'])->name('expense.delete');
 
 
 

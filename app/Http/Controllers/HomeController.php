@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Models\Company;
+use App\Models\Expense;
 
 
 class HomeController extends Controller
@@ -38,8 +39,7 @@ class HomeController extends Controller
                     ->where('user_id','=',Auth::user()->id)
                     ->get();
 
-        $expenses = DB::table('expense')
-            ->select('title','amount','pm.method','cat.category')
+        $expenses = Expense::select('expense.id','title','amount','pm.method','cat.category')
             ->join('payment_method as pm','pm.id','=','expense.pm_id')
             ->join('category as cat','cat.id','=','expense.cat_id')
             ->where('com_id','=',$companies[0]->id)

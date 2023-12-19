@@ -85,14 +85,27 @@ class ExpenseController extends Controller
                     ->where('user_id','=',Auth::user()->id)
                     ->get();
 
-        $expenses = Expense::select('title','amount','pm.method','cat.category')
+        $expenses = Expense::select('expense.id','title','amount','pm.method','cat.category')
                 ->join('payment_method as pm','pm.id','=','expense.pm_id')
                 ->join('category as cat','cat.id','=','expense.cat_id')
                 ->where('com_id','=',$company->id)
                 ->get();
-
         return view('home',['companies'=>$companies,'company'=>$company,'expenses'=>$expenses]);
 
+    }
+
+
+    // Delete expenese
+    public function delete(Expense $expense )
+    {
+        // Delete the expense
+        Expense::where('id',$expense->id)->delete();
+
+        // Delete the payment method through the foreign key
+        PaymentMethod::where('id', $expense->pm_id)->delete();
+
+        return back();
+        // dd($expense->id,$expense->pm_id);
     }
 
     // Filter expenses
@@ -110,6 +123,7 @@ class ExpenseController extends Controller
                 $expenses_filter=array_push($expenses[$i]);
             }
         }else $expenses_filter=$expenses;
+        dd($request);
         dd($expenses_filter);
     }
 

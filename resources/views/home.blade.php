@@ -17,6 +17,7 @@
                         </button>
                     </div> --}}
 
+                    {{-- Filter --}}
                     <div class="dropdown position-absolute top-0 end-0">
                         <button class="btn  btn-light dropdown-toggle" type="button" style="background-color:#f1f3f5" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-filter-right" viewBox="0 0 10 18">
@@ -159,7 +160,7 @@
                             <th scope="col">Amount</th>
                             <th scope="col">Payment Method</th>
                             <th scope="col">Category</th>
-                            {{-- <th scope="col">Edit</th> --}}
+                            <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -169,6 +170,11 @@
                                 <td>{{$expense->amount}} $ </td>
                                 <td>{{$expense->method}}</td>
                                 <td>{{$expense->category}}</td>
+                                <td>
+                                    <a href="{{route('expense.delete',['expense'=>$expense->id])}}">
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -259,5 +265,6 @@
             </div>
         </div>
 
+        {{-- {{dd($expenses)}} --}}
 </div>
 @endsection

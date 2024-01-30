@@ -18,7 +18,7 @@
                     </div> --}}
 
                     {{-- Filter --}}
-                    <div class="dropdown position-absolute top-0 end-0">
+                    {{-- <div class="dropdown position-absolute top-0 end-0">
                         <button class="btn  btn-light dropdown-toggle" type="button" style="background-color:#f1f3f5" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-filter-right" viewBox="0 0 10 18">
                                 <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5m0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5m0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5"/>
@@ -146,7 +146,7 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 

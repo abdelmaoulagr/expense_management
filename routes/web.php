@@ -28,7 +28,7 @@ Route::post('/home', [App\Http\Controllers\HomeController::class, 'status'])->na
 // Companies
 Route::get('/companies', [company::class, 'company'])->name('companies');
 Route::post('/companies', [company::class, 'addcom'])->name('addcom');
-
+// // Use HTTP delete to destroy an company like { Route::delete('articles/{id}', 'ArticleController@delete'); }
 Route::get('/companies/{company}/delete', [company::class, 'delete'])->name('com.delete');
 Route::get('/companies/{company}/status', [company::class, 'status'])->name('com.status');
 
@@ -36,6 +36,7 @@ Route::get('/companies/{company}/status', [company::class, 'status'])->name('com
 Route::post('/addexp', [exp::class, 'addexp'])->name('addexp');
 Route::get('/{company}', [exp::class,'show_expenses'])->name('com.exp');
 Route::post('/filter', [exp::class, 'filter'])->name('filter.expense');
+// // Use Route::delete to destroy an expense
 Route::get('/{expense}/delete', [exp::class, 'delete'])->name('expense.delete');
 
 

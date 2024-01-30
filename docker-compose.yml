@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+    app:
+        build:
+            context: '.'
+            args:
+                -   UID=${UID}
+        container_name: expense-managment-app
+        environment:
+            - APACHE_RUN_USER=${UID}
+            - APACHE_RUN_GROUP=${UID}
+        volumes:
+            - .:/var/www/html
+            - ./storage:/var/www/html/storage
+        ports:
+            - "8000:80"
+        networks:
+            - backend
+        working_dir: /var/www/html/expense_management
+
+    mysql-db:
+        image: mysql:8
+        container_name: mysql-db
+        volumes:
+            - ./run/var:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+            - MYSQL_DATABASE=${DB_DATABASE}
+            # - MYSQL_USER=${DB_USERNAME}
+            # - MYSQL_PASSWORD=${DB_PASSWORD}
+        networks:
+            - backend
+
+networks:
+    backend:
+        name: backend-network

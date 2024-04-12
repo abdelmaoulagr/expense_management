@@ -5,11 +5,12 @@ services:
         build:
             context: '.'
             args:
-                -   UID=${UID}
+                user: devuser
+                uid: 1000
         container_name: expense-managment-app
         environment:
-            - APACHE_RUN_USER=${UID}
-            - APACHE_RUN_GROUP=${UID}
+            - APACHE_RUN_USER=devuser
+            - APACHE_RUN_GROUP=devuser
         volumes:
             - .:/var/www/html
             - ./storage:/var/www/html/storage

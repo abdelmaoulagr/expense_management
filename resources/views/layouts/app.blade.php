@@ -76,6 +76,11 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
+                                    <!--dashboad -->
+                                    <a class="dropdown-item"  href="">
+                                        Dashboard
+                                    </a>
+
                                     <!-- Switch -->
                                     <div class="form-check form-switch p-0 ">
                                         <div class="d-inline-flex flex-row-reverse gap-0 m-3">

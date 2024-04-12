@@ -171,9 +171,14 @@
                                 <td>{{$expense->method}}</td>
                                 <td>{{$expense->category}}</td>
                                 <td>
-                                    <a href="{{route('expense.delete',['expense'=>$expense->id])}}">
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </a>
+                                    <form method="POST" action="/{{$expense->id}}/delete">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-danger delete-user" value="Delete">
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

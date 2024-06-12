@@ -1,22 +1,16 @@
 # Expense Management System
 
 An expense management system built with Laravel for managing the expenses of multiple companies. This application is designed for individuals who own or manage several companies and need a comprehensive tool to track and manage their financial activities.
-
-<center>
+<p align="center">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original-wordmark.svg" width="200" height="200"/>
-</center>
-
+</p>
 ## Table of Contents
 
-- [Features](#features)
+- [Features](#features-🚀)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Running Tests](#running-tests)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 - [Development Status](#development-status)
 
 ## Features 🚀

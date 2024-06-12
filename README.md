@@ -104,7 +104,7 @@ php artisan serve
 ```
 Visit http://localhost:8000 in your browser.
 
-## Contributing   🤝 
+## Contributing 🤝 
 
 Feel free to submit pull requests and issues.
 ## Development Status 🛠️

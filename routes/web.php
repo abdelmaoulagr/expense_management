@@ -17,7 +17,7 @@ use App\Http\Controllers\ExpenseController as exp;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -36,11 +36,6 @@ Route::post('/addexp', [exp::class, 'addexp'])->name('addexp');
 Route::get('/{company}', [exp::class,'show_expenses'])->name('com.exp');
 Route::post('/filter', [exp::class, 'filter'])->name('filter.expense');
 Route::delete('/{expense}/delete', [exp::class, 'delete'])->name('expense.delete');
-
-// Dashboard of expenses
-Route::get('/{company}', [exp::class,'show_expenses'])->name('com.exp');
-
-
 
 
 

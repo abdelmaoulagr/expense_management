@@ -8,11 +8,11 @@ An expense management system built with Laravel for managing the expenses of mul
 ## Table of Contents
 
 - [Features](#features-)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Development Status](#development-status)
+- [Prerequisites](#prerequisites-)
+- [Installation](#installation-)
+- [Usage](#usage-)
+- [Contributing](#contributing-)
+- [Development Status](#development-status-)
 
 ## Features 🚀
 
